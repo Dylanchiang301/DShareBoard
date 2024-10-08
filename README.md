@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# D-Share 多元內容社群分享的平台。
 
-## Getting Started
+D-Share 是一個開放式平台，讓使用者能輕鬆地分享他們的文章、內容及標籤。此平台使用 Next.js 進行開發，Tailwind CSS 來美化網頁，資料庫使用 MongoDB，並透過 NextAuth 進行 Google 登入驗證。
 
-First, run the development server:
+## 功能概覽
+- 使用者登入：透過 Google 帳戶進行登入，方便使用者快速開始使用。
+- 新增貼文：使用者可以撰寫並分享他們的貼文，包含內容、標籤及相關連結。
+- 編輯貼文：使用者可以編輯自己所撰寫的貼文。
+- 展示貼文：每則貼文以卡片形式顯示，包含發佈者資訊、內容及標籤。
+- 篩選貼文：搜尋框提供即時過濾功能，根據發佈者、標籤或內容進行篩選，幫助使用者快速找到感興趣的內容。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## 系統需求
+- Node.js 16.8.0 或更高版本。
+- npm 7.20.3 或更高版本。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 專案安裝與運行
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. 複製專案:
+   ```bash
+   git clone https://github.com/Dylanchiang301/DShareBoard.git
+   ```
+2. 安裝依賴:
+    ```bash
+    npm install
+    ```
+3. 啟動應用：
+    ```bash
+    npm run dev
+    ```
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.js`.
+## 使用注意事項
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+此專案有使用到 MongoDB Atlas 雲端資料庫和 Google Auth 的登入。因此要自行設定 .env 內容。
+    ```bash
+    GOOGLE_ID=
+    GOOGLE_CLIENT_SECRET=
+    MONGODB_URI=
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    NEXTAUTH_URL=http://localhost:3000
+    NEXTAUTH_URL_INTERNAL=http://localhost:3000
+    NEXTAUTH_SECRET=
+    ```
